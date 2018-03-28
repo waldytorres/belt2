@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Item</title>
+</head>
+<body>
+    <div>
+        <a href='/logout'>Logout</a>
+        <a href='/success'>Home</a>
+    </div>
+    <form action= '/createitem' method='POST'>
+        {% csrf_token %}
+   <h1>Create a New WishList Item!</h1>
+    <label for="itemname"> Item/Product:</label>
+    <input type= "text" id="itemname" name="itemname">
+   <input type = "submit" value= "Add Item">
+</body>
+</html>

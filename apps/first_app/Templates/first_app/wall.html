@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Welcome, {{user.firstname}}!</h1>
+    <a href='/logout'>Logout</a>
+    <h3>Quotable Quotes:</h3>
+    <div>
+        <table>
+            {% for Q in quotable %}
+            <div>
+                <td>
+                    <tr>
+                        <p>{{Q.itemname}}</p>
+                    </tr>
+                    <tr>
+                        <text>Posted by: </text><a href='/userinfo'>{{Q.creator.firstname}}</a>
+                    <tr>
+                </td>
+            </div>
+            {% endfor %}
+        </table>
+    </div>
+    <h3>Your Favorites:</h3>
+    <div>
+        <table>
+                <tr>
+                    <td>
+                    </td>
+        </table>
+    <div>
+            <form action= '/createitem' method='POST'>
+            {% csrf_token %}
+           <h3>Contribute a Quote:</h3>
+           <p>
+           <label for="quotecreator"> Quoted By:</label>
+           <input type= "text" id="quotecreator" name="quotecreator">
+            </p>
+            <p>
+            <label for="itemname"> Message:</label>
+            <input type= "text" id="itemname" name="itemname">
+            </p>
+           <input type = "submit" value= "Submit"> 
+    </div>
+</div>
+</body>
+</html>

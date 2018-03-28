@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Registration Form</title>
+    </head>
+        <body>
+                {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {%endfor%}
+                {%endif%}
+            <form action= '/register' method='POST'>
+                {% csrf_token %}
+            <h1>Registration</h1>
+                <p>
+                <label for="firstname"> First Name:</label>
+                <input type= "text" id="firstname" name="firstname">
+                </p>
+                <p>
+                <label for="lastname"> Last Name:</label>
+                <input type= "text" id="lastname" name="lastname">
+                </p>
+                <p>
+                <label for= "email"> Email:</label>
+                <input type= "text" id="email" name="email">
+                </p>
+                <p>
+                <label for= "password"> Password:</label>
+                <input type= "password" id="password" name="password">
+                </p>
+                <p>
+                <label for= "confirm_password"> Confirm Password:</label>
+                <input type= "password" id="confirm_password" name="confirm_password">
+                </p>
+                <input type = "submit" value= "Register">
+            </form>
+            <form action= '/login' method='POST'>
+                {% csrf_token %}
+            <h2>Log In</h2>
+                <p>
+                <label for="email"> Email:</label>
+                <input type= "text" id="email" name="email">
+                </p>
+                <p>
+                <label for= "password"> Password:</label>
+                <input type= "password" id="password" name="password">
+                </p>
+                <input type = "submit" value= "Log In">
+            </form>
+        </body>
+</html>
