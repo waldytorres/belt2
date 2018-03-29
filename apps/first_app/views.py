@@ -14,8 +14,6 @@ def success(request):
         context = {
             'user': User.objects.get(id=request.session['id']),
             'quotable': Quote.objects.all()
-            # 'items': Items.objects.filter(user_items=request.session["id"]),
-            # 'wishers': Items.objects.filter(~Q(user_items=request.session["id"]))
         }
     # errors = Quote.objects.quote_validator(request.POST)
     # if len(errors):
@@ -64,21 +62,3 @@ def userinfo(request):
             'user': User.objects.get(id=request.session['id'])
         }
   return render(request, 'first_app/userinfo.html', context)
-
-# def remove(request, num):
-#    this_user = User.objects.get(id= request.session['id'])
-#    this_item = Items.objects.get(id=num)
-#    this_item.user_items.remove(this_user)
-#    return redirect('/success')
-
-
-# def add(request, num):
-#   this_user = User.objects.get(id= request.session['id'])
-#   this_item = Items.objects.get(id=num)
-#   this_item.user_items.add(this_user)
-#   return redirect('/success')
-
-# def delete(request, num):
-#   this_item = Items.objects.get(id=num)
-#   this_item.delete()
-#   return redirect('/success')

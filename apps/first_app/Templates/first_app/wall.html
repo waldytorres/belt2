@@ -19,19 +19,16 @@
                     <tr>
                         <text>Posted by: </text><a href='/userinfo'>{{Q.creator.firstname}}</a>
                     <tr>
+                    <input type = "submit" value= "Add to my List"> 
                 </td>
             </div>
             {% endfor %}
         </table>
     </div>
-    <h3>Your Favorites:</h3>
-    <div>
+        <h3>Your Favorites:</h3>
         <table>
-                <tr>
-                    <td>
-                    </td>
+            
         </table>
-    <div>
             <form action= '/createitem' method='POST'>
             {% csrf_token %}
            <h3>Contribute a Quote:</h3>
